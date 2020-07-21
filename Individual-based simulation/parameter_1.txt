@@ -1,7 +1,7 @@
 varp            0.0
-vart		0.0
-malepc 	    20
-femalepc	   20
+vart		        0.0
+malepc 	        20
+femalepc	      20
 mateMaleU	      0.001
 mateFemaleU	    0.001
 careMaleU 	    0.001
@@ -16,13 +16,13 @@ brec 		        0.00001
 matePop		      2000
 alphaFemale	    0.003
 alphaMale	      0.003
-recoMaleT	      2
-recoFemaleT	    2
+recoMaleT	      0
+recoFemaleT	    0
 juvT		        20
-kappa                    0.01
+kappa           0.01
 alpha		        2.0
 demandOff	      20
-syn              0.5
+syn             0.0
 mp		          0.005 
 signmap		      0.01
 pMaxmutstep	    0.05
@@ -30,5 +30,5 @@ mt		          0.005
 signmaTau 	    0.01
 tauMaxmutstep	  0.1
 mpc		          0.005
-ifRandom         0
-tEnd             1000001
+ifRandom        0
+tEnd            5000001
