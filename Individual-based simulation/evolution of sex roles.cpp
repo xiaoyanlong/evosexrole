@@ -48,11 +48,11 @@ double bcare;				// ... in the caring state
 double brec;				// ... in the pre-mating state
 
 /* Model parameters: population */
-int	   matePop;				// initialization for population size 
+int    matePop;				// initialization for population size 
 double alphaFemale;			// degree of female density dependence
 double alphaMale;			// degree of male density dependence
-int	   recoMaleT;			// the fixed days when males stay in the pre-mating state
-int	   recoFemaleT;			// the fixed days when females stay in the pre-mating state
+int    recoMaleT;			// the fixed days when males stay in the pre-mating state
+int    recoFemaleT;			// the fixed days when females stay in the pre-mating state
 int    juvT;				// the fixed days when juveniles stay in the juvenile and pre-mating state
 
 /* Model parameters: sexual selection */
@@ -130,9 +130,9 @@ public:
 		const {
 		return std::pair <int, int>(pc1, pc2);
 	}
-	int		getFemaleRec() const { return(femaleRec); }	
-	int		getMaleRec() const { return(maleRec); }
-	int		getjuvdays() const { return (juvdays); }	
+	int	getFemaleRec() const { return(femaleRec); }	
+	int	getMaleRec() const { return(maleRec); }
+	int	getjuvdays() const { return (juvdays); }	
 	int     getmatingtimes() const { return (matetimes); }
 	int     getNumOff() const { return (numOff); }
 	int     getNumSurOff() const { return (numSurOff); }
