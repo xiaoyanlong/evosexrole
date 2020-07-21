@@ -30,7 +30,7 @@ Program version
 /* Model parameters: alleles at four gene loci */
 double varp;				// initial value of female preferences 
 double vart;				// initial value of male ornaments
-int    malepc;			    // initail value of male care
+int    malepc;			    	// initail value of male care
 int    femalepc;			// initial value of female care
 
 
@@ -61,21 +61,21 @@ double alpha;				// scaling factor that affects the intensity of sexual selectio
 
 /* Model parameters: offspring survival */
 double demandOff;			// the care demand of offspring
-double syn;					// synergy parameter
+double syn;				// synergy parameter
 
 /* Model parameters: mutation*/
-double  mp;					// mutational rate for gene p (preferences)
+double  mp;				// mutational rate for gene p (preferences)
 double  signmap;			// sd step mutation size for p 
-double  pMaxmutstep;		// maximum mutation stepsize for p 
-double  mt;					// mutational rate for tau genes (ornaments)
+double  pMaxmutstep;			// maximum mutation stepsize for p 
+double  mt;				// mutational rate for tau genes (ornaments)
 double  signmaTau;			// sd step mutation size for tau 
-double  tauMaxmutstep;		// maximum mutation stepsize for tau
+double  tauMaxmutstep;			// maximum mutation stepsize for tau
 double  mpc;				// mutational rate for gene pc (parental care)
 
 /* Model parameters: mate choice*/
-bool    ifRandom;           // if mating is random or not
-							// ifRandom = 0, mating is random and there is no sexual selection
-							// ifRandom = 1, female preference and male ornamemt coevolve with parental roles
+bool    ifRandom;           		// if mating is random or not
+					// ifRandom = 0, mating is random and there is no sexual selection
+					// ifRandom = 1, female preference and male ornamemt coevolve with parental roles
 
 /* Model parameters: simulation time*/
 int tEnd;
@@ -147,15 +147,15 @@ public:
 	void	writegenome(double &, double &, std::vector <int> &);
 
 private:
-	double	p;					// individual preference, only expressed in females
+	double	p;				// individual preference, only expressed in females
 	double	tau;				// individual ornaments, only expressed in males
-	int		pc1;				// parental care only expressed in females
-	int		pc2;				// parental care only expressed in males
-	int		femaleRec;			// pre-mating period of the female
-	int		maleRec;			// pre-mating period of the male
-	int		juvdays;			// juvenile period of individuals
-	int     femaleCareDay;		// days left to provide parental care in female parents
-	int     maleCareDay;		// ... in male parents
+	int	pc1;				// parental care only expressed in females
+	int	pc2;				// parental care only expressed in males
+	int	femaleRec;			// pre-mating period of the female
+	int	maleRec;			// pre-mating period of the male
+	int	juvdays;			// juvenile period of individuals
+	int     femaleCareDay;			// days left to provide parental care in female parents
+	int     maleCareDay;			// ... in male parents
 	int     matetimes;			// mating times of an individual (start from 0)
 	int     numOff;				// number of produced offspring of an individual
 	int     numSurOff;			// number of survival offspring of an individual
@@ -238,7 +238,7 @@ std::vector <Individual> juvMale;
 std::vector <Individual> juvFemale;
 
 // output files
-std::ofstream allTrait;			// to record the population average value for all traits.
+std::ofstream allTrait;		// to record the population average value for all traits.
 std::ofstream offspringTrait;	// to record offspring trait 
 std::ofstream para;             // to record the parameters
 std::ofstream deadIndividual;   // to record all dead individuals
@@ -422,11 +422,11 @@ void addmutationPC(int &val) { // to add mutation for alleles pc
 Individual madeOff(const Individual &fem, const Individual &male) {
 	// function to create an offspring by its mother and father
 
-	double newp;						// offspring preferences
-	double newt;						// offspring ornaments
+	double newp;				// offspring preferences
+	double newt;				// offspring ornaments
 	std::vector <int> newpc(2, 0);		// offspring parental care
-	int newFemaleCareDays;				// maternal care
-	int newMaleCareDays;				// paternal care
+	int newFemaleCareDays;			// maternal care
+	int newMaleCareDays;			// paternal care
 
 	std::bernoulli_distribution Nallele(0.5); // 50% pro to get gene from mom, 50% from dad
 
