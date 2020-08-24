@@ -131,7 +131,7 @@ int main(int argc, const char** argv)
       // accidentally overwritten data is nightmarish
       throw cmd::parse_error("outdir exists. Consider --force to force override");
     }
-    size_t rep = 1;
+    size_t rep = 200;
     clp.optional("rep", rep);
     auto param_file = clp.required<std::filesystem::path>("param");
     bool verbose = clp.flag("--verbose");
