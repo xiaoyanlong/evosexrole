@@ -4,5 +4,5 @@ include_directories(${CMAKE_SOURCE_DIR}/libs/ $(CMAKE_SYSTEM_PREFIX_PATH}/includ
 set(HEADER_FILES evorole.h recorder.h simulation.h json.h)
 add_executable(evorole main.cpp recorder.cpp simulation.cpp json.cpp)
 target_link_libraries(evorole ${TBB} PRIVATE Threads::Threads)
-install(TARGETS evosexrole/evorole DESTINATION bin)
-install(TARGETS evosexrole/evorole CONFIGURATIONS Release DESTINATION bin)
+install(TARGETS evorole DESTINATION bin)
+install(TARGETS evorole CONFIGURATIONS Release DESTINATION bin)
