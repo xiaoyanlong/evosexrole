@@ -1,7 +1,7 @@
 [
 	{
 		"N": 2000,
-		"tEnd": 500000001,
+		"tEnd": 200000001,
 		"genome": {
 			"P": 0.0,
 			"tau": 0.0,
@@ -9,7 +9,7 @@
 			"pc2": 10
 		},
 		"female": {
-			"mu": [ 0.001, 0.001, 0.001, 0.00005 ],
+			"mu": [ 0.001, 0.001, 0.005, 0.00005 ],
 			"preT": 1,
 			"random_mating": true,
 			"gamma": 0.003,
@@ -17,9 +17,177 @@
 			"alpha": 2.0
 		},
 		"male": {
-			"mu": [ 0.001, 0.001, 0.001, 0.00005 ],
+			"mu": [ 0.001, 0.001, 0.005, 0.00005 ],
 			"beta": [ 0.00001, 0.00001, 0.0, 0.0 ],
-			"preT": 1,
+			"preT": 0,
+			"gamma": 0.003
+		},
+		"common": {
+			"juvT": 20,
+			"D": 20.0,
+			"sigma": 0.0
+		},
+		"mutation": {
+			"m_P": 0.0,
+			"sigma_P": 0.01,
+			"smax_P": 0.05,
+			"m_tau": 0.0,
+			"sigma_tau": 0.01,
+			"smax_tau": 0.1,
+			"m_pc": 0.005
+		},
+		"recorder": {
+			"event_interval": 10000,
+			"trait_interval": 10000
+		}
+	},
+	{
+		"N": 2000,
+		"tEnd": 200000001,
+		"genome": {
+			"P": 0.0,
+			"tau": 0.0,
+			"pc1": 10,
+			"pc2": 10
+		},
+		"female": {
+			"mu": [ 0.001, 0.001, 0.005, 0.00005 ],
+			"preT": 2,
+			"random_mating": true,
+			"gamma": 0.003,
+			"kappa": 0.02,
+			"alpha": 2.0
+		},
+		"male": {
+			"mu": [ 0.001, 0.001, 0.005, 0.00005 ],
+			"beta": [ 0.00001, 0.00001, 0.0, 0.0 ],
+			"preT": 0,
+			"gamma": 0.003
+		},
+		"common": {
+			"juvT": 20,
+			"D": 20.0,
+			"sigma": 0.0
+		},
+		"mutation": {
+			"m_P": 0.0,
+			"sigma_P": 0.01,
+			"smax_P": 0.05,
+			"m_tau": 0.0,
+			"sigma_tau": 0.01,
+			"smax_tau": 0.1,
+			"m_pc": 0.005
+		},
+		"recorder": {
+			"event_interval": 10000,
+			"trait_interval": 10000
+		}
+	},
+	{
+		"N": 2000,
+		"tEnd": 200000001,
+		"genome": {
+			"P": 0.0,
+			"tau": 0.0,
+			"pc1": 10,
+			"pc2": 10
+		},
+		"female": {
+			"mu": [ 0.001, 0.001, 0.005, 0.00005 ],
+			"preT": 3,
+			"random_mating": true,
+			"gamma": 0.003,
+			"kappa": 0.02,
+			"alpha": 2.0
+		},
+		"male": {
+			"mu": [ 0.001, 0.001, 0.005, 0.00005 ],
+			"beta": [ 0.00001, 0.00001, 0.0, 0.0 ],
+			"preT": 0,
+			"gamma": 0.003
+		},
+		"common": {
+			"juvT": 20,
+			"D": 20.0,
+			"sigma": 0.0
+		},
+		"mutation": {
+			"m_P": 0.0,
+			"sigma_P": 0.01,
+			"smax_P": 0.05,
+			"m_tau": 0.0,
+			"sigma_tau": 0.01,
+			"smax_tau": 0.1,
+			"m_pc": 0.005
+		},
+		"recorder": {
+			"event_interval": 10000,
+			"trait_interval": 10000
+		}
+	},
+	{
+		"N": 2000,
+		"tEnd": 200000001,
+		"genome": {
+			"P": 0.0,
+			"tau": 0.0,
+			"pc1": 10,
+			"pc2": 10
+		},
+		"female": {
+			"mu": [ 0.001, 0.001, 0.005, 0.00005 ],
+			"preT": 4,
+			"random_mating": true,
+			"gamma": 0.003,
+			"kappa": 0.02,
+			"alpha": 2.0
+		},
+		"male": {
+			"mu": [ 0.001, 0.001, 0.005, 0.00005 ],
+			"beta": [ 0.00001, 0.00001, 0.0, 0.0 ],
+			"preT": 0,
+			"gamma": 0.003
+		},
+		"common": {
+			"juvT": 20,
+			"D": 20.0,
+			"sigma": 0.0
+		},
+		"mutation": {
+			"m_P": 0.0,
+			"sigma_P": 0.01,
+			"smax_P": 0.05,
+			"m_tau": 0.0,
+			"sigma_tau": 0.01,
+			"smax_tau": 0.1,
+			"m_pc": 0.005
+		},
+		"recorder": {
+			"event_interval": 10000,
+			"trait_interval": 10000
+		}
+	},
+	{
+		"N": 2000,
+		"tEnd": 200000001,
+		"genome": {
+			"P": 0.0,
+			"tau": 0.0,
+			"pc1": 10,
+			"pc2": 10
+		},
+		"female": {
+			"mu": [ 0.001, 0.001, 0.005, 0.00005 ],
+			"preT": 5,
+			"random_mating": true,
+			"gamma": 0.003,
+			"kappa": 0.02,
+			"alpha": 2.0
+		},
+		"male": {
+			"mu": [ 0.001, 0.001, 0.005, 0.00005 ],
+			"beta": [ 0.00001, 0.00001, 0.0, 0.0 ],
+			"preT": 0,
 			"gamma": 0.003
 		},
 		"common": {
