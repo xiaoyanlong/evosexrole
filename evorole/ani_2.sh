@@ -6,10 +6,10 @@
 #SBATCH --partition=gelifes
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
-#SBATCH --mem=1000
+#SBATCH --mem=2000
 #SBATCH --cpus-per-task=16
 
 module load GCC --latest
 
 datadir="/data/$(whoami)/ani_2"
-./bin/evorole --force param=param.json rep=20 outdir=$datadir
+./bin/evorole --force param=param.json rep=10 outdir=$datadir
