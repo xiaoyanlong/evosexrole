@@ -14,18 +14,18 @@ module load CMake --latest
 ```
 ### Both platforms
 ```
-git clone https://github.com/xiaoyanlong/evosexrole.git
-cd ~/evosexrole/evorole
+git clone ... evorole
+cd ~/evorole
 mkdir build & cd build
 cmake ..
 make install
-cd ~/evosexrole/evorole/bin
+cd ~/evorole/bin
 ./evorole --help
-./evorole param=../param.json outdir='your output directory'
+./evorole param=./param.json outdir='your output directory'
 ```
 ## submit job on peregrine
 ```
-cd ~/evosexrole/evorole
+cd ~/evorole
 # edit submit_example.sh
 nano submit_example.sh
 sbatch submit_example.sh
