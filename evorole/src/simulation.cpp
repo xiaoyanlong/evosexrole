@@ -71,8 +71,8 @@ namespace evorole {
       pool_survival(day, Pool::mate);     // explicit
       reproduction(day);                  // depletes mate, populates care & juv
       pool_transition(Pool::care, Pool::pre, { param_.female.preT, param_.male.preT });
-      pool_transition(Pool::juv, Pool::mate, { param_.female.preT, param_.male.preT });
       pool_transition(Pool::pre, Pool::mate, { 0, 0 });    // undefined max pool_stay in mate pool
+      pool_transition(Pool::juv, Pool::mate, { param_.female.preT, param_.male.preT });
       recorder_->record_traits_end(day, *this);
     }
     recorder_->stream_out();
@@ -245,7 +245,7 @@ namespace evorole {
       auto it = src.begin();
       auto last = src.end();
       while (it != last) {
-        if (-1 < --(it->pool_stay)) {
+        if (0 <= --(it->pool_stay)) {
           ++it;
         }
         else {
