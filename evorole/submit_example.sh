@@ -2,7 +2,7 @@
 
 #!!! adjust the time quota !!!
 
-#SBATCH --time=04:00:00
+#SBATCH --time=00:15:00
 #SBATCH --partition=gelifes
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
