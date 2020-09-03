@@ -10,7 +10,7 @@
 		},
 		"female": {
 			"mu": [ 0.001, 0.001, 0.005, 0.00005 ],
-			"preT": 0,
+			"preT": 5,
 			"random_mating": true,
 			"gamma": 0.003,
 			"kappa": 0.02,
