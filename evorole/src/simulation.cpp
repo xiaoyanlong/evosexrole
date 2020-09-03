@@ -72,7 +72,7 @@ namespace evorole {
       reproduction(day);                  // depletes mate, populates care & juv
       pool_transition(Pool::care, Pool::pre, { param_.female.preT, param_.male.preT });
       pool_transition(Pool::pre, Pool::mate, { 0, 0 });    // undefined max pool_stay in mate pool
-      pool_transition(Pool::juv, Pool::mate, { 0, 0 });
+      pool_transition(Pool::juv, Pool::pre, { 0, 0 });
       recorder_->record_traits_end(day, *this);
     }
     recorder_->stream_out();
