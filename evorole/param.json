@@ -1,7 +1,7 @@
 [
 	{
 		"N": 2000,
-		"tEnd": 5000001,
+		"tEnd": 1001,
 		"genome": {
 			"P": 0.0,
 			"tau": 0.0,
@@ -37,8 +37,8 @@
 			"m_pc": 0.005
 		},
 		"recorder": {
-			"event_interval": 1000,
-			"trait_interval": 1000
+			"event_interval": 1,
+			"trait_interval": 1
 		}
 	},
 	{
