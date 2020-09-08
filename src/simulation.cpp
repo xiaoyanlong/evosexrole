@@ -127,7 +127,7 @@ namespace evorole {
       // offspring survival: look ahead until maturation
       auto osex = static_cast<Sex>(binary(reng_));
       const double gamma = (osex == Sex::female) ? param_.female.gamma : param_.male.gamma;
-      const double T_tot = pc1 + pc2 + param_.common.sigma * pc1 * pc2;
+      const double T_tot = param_.male.preT + pc1 + pc2 + param_.common.sigma * pc1 * pc2;
       const double S = (T_tot * T_tot) / (T_tot * T_tot + DD);
       if (std::bernoulli_distribution(S / (1.0 + gamma * N))(reng_)) {
         // will survive infant state
