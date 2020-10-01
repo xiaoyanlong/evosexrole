@@ -33,7 +33,7 @@
 			"smax_P": 0.05,
 			"m_tau": 0.0,
 			"sigma_tau": 0.01,
-			"smax_tau": 0.1,
+			"smax_tau": 0.05,
 			"m_pc": 0.005
 		},
 		"recorder": {
@@ -75,7 +75,7 @@
 			"smax_P": 0.05,
 			"m_tau": 0.0,
 			"sigma_tau": 0.01,
-			"smax_tau": 0.1,
+			"smax_tau": 0.05,
 			"m_pc": 0.005
 		},
 		"recorder": {
