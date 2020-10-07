@@ -13,7 +13,7 @@ email: x.long@rug.nl and f.j.weissing@rug.nl
 - [Demo](#demo)
 - [Results](#results)
 - [License](./LICENSE)
-- [Issues](https://github.com/ebridge2/lol/issues)
+- [Issues](#issues)
 - [Citation](#citation)
 
 
