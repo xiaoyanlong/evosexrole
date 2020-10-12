@@ -62,7 +62,7 @@ cmake ..
 make install
 cd ~/evosexrole/evorole/bin
 ./evorole --help
-./evorole param=./param.json outdir='your output directory'
+./evorole param=../param.json outdir='your output directory'
 ```
 ### Peregrine cluster
 
@@ -79,7 +79,7 @@ cmake ..
 make install
 cd ~/evosexrole/evorole/bin
 ./evorole --help
-./evorole param=./param.json outdir='your output directory'
+./evorole param=../param.json outdir='your output directory'
 ```
 
 If you prefer to submit job on peregrine, you can use following command (`submit_example.sh` is already offered in the folder of `evorole`):
