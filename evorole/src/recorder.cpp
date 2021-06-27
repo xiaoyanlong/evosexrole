@@ -121,11 +121,12 @@ namespace evorole {
     }
     { // deaths
       auto os = std::ofstream(out_ / "deaths.csv");
-      os << "day,individual,preference,ornaments,pc1,pc2,matingT,numOff,numSurOff,\n";
+      os << "day,individual,preference,ornaments,pc1,pc2,matingT,matingduration,numOff,numSurOff,\n";
       for (const auto& rec : deaths_) {
         os << rec.day << ',' << sex_prefix[rec.ind.sex] << '_' << PoolName[rec.src] << ',';
         os << rec.ind.genome << ',';
-        os << rec.ind.matings << ',' << '?' << ',' << rec.ind.offspring << '\n';
+        os << rec.ind.matings << ',' << rec.ind.matingduration<< ','<<
+            rec.ind.offbefden << ',' << rec.ind.offspring << '\n';
       }
     }
     { // offspring

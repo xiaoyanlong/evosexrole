@@ -2,11 +2,11 @@
 
 #!!! adjust the time quota !!!
 
-#SBATCH --time=01:15:00
+#SBATCH --time=02:15:00
 #SBATCH --partition=gelifes
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
-#SBATCH --mem=5GB
+#SBATCH --mem=10GB
 #SBATCH --cpus-per-task=16
 
 module load GCC --latest

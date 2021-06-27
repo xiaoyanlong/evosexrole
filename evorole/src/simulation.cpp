@@ -47,6 +47,8 @@ namespace evorole {
     pool_stay(0),
     genome(param.genome),
     matings(0),
+    matingduration(0),
+    offbefden(0),
     offspring(0),
     sex(sex)
   {}
@@ -112,6 +114,16 @@ namespace evorole {
     // mating pairs in [0, last)
     auto& f = pop_[Sex::female][Pool::mate];
     auto& m = pop_[Sex::male][Pool::mate];
+    if (f.size()-last > 0)              // unmated females or males have to wait for another day
+    {
+        for (size_t i = last; i < f.size(); ++i)
+            ++f[i].matingduration;
+    }
+    if (m.size()-last > 0)
+    {
+        for (size_t i = last; i < m.size(); ++i)
+            ++m[i].matingduration;
+    }
     const double fmu = param_.female.mu[Pool::care];
     const double mmu = param_.male.mu[Pool::care];
     const double beta = param_.male.beta[Pool::care];
@@ -129,6 +141,11 @@ namespace evorole {
       const double gamma = (osex == Sex::female) ? param_.female.gamma : param_.male.gamma;
       const double T_tot = pc1 + pc2 + param_.common.sigma * pc1 * pc2;
       const double S = (T_tot * T_tot) / (T_tot * T_tot + DD);
+      if (std::bernoulli_distribution(S)(reng_))
+      {
+          ++f[i].offbefden;
+          ++m[i].offbefden;
+      }
       if (std::bernoulli_distribution(S / (1.0 + gamma * N))(reng_)) {
         // will survive infant state
         const double jmu = (osex == Sex::female) ? param_.female.mu[Pool::juv] : param_.male.mu[Pool::juv];

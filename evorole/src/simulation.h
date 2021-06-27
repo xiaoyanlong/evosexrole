@@ -19,7 +19,9 @@ namespace evorole {
     int pool_stay;      // count-down max days in pool
     genome_t genome;
     int matings;        // counter matings
+    int offbefden;      //counter offspring before density-dependent selection
     int offspring;      // counter mature offspring
+    int matingduration; // counter mating duration
     Sex sex;
   };
 
