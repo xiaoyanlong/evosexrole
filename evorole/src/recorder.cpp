@@ -31,10 +31,11 @@ namespace evorole {
     {
       size_t adult_females = 0;
       size_t adult_males = 0;
-      for (auto pool : { Pool::mate, Pool::care }) {
-        adult_females += sim.pop()[Sex::female][pool].size();
-        adult_males += sim.pop()[Sex::male][pool].size();
+      for (size_t i = 0; i < Pool::max - 1; ++i) {
+          adult_females += sim.pop()[Sex::female][i].size();
+          adult_males += sim.pop()[Sex::male][i].size();
       }
+      
       const size_t adults = adult_females + adult_males;
       return adults ? static_cast<double>(adult_males) / adults : 0.5;
     }
