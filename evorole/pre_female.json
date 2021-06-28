@@ -37,7 +37,7 @@
 			"m_pc": 0.0
 		},
 		"recorder": {
-			"event_interval": 1000000,
+			"event_interval": 100,
 			"trait_interval": 1000
 		}
 	},
@@ -79,7 +79,7 @@
 			"m_pc": 0.0
 		},
 		"recorder": {
-			"event_interval": 1000000,
+			"event_interval": 100,
 			"trait_interval": 1000
 		}
 	},
@@ -121,7 +121,7 @@
 			"m_pc": 0.0
 		},
 		"recorder": {
-			"event_interval": 1000000,
+			"event_interval": 100,
 			"trait_interval": 1000
 		}
 	},
@@ -163,7 +163,7 @@
 			"m_pc": 0.0
 		},
 		"recorder": {
-			"event_interval": 1000000,
+			"event_interval": 100,
 			"trait_interval": 1000
 		}
 	}
