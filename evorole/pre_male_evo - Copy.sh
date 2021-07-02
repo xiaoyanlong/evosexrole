@@ -12,4 +12,4 @@
 module load GCC --latest
 
 datadir="/data/$(whoami)"
-./bin/evorole --force param=pre_female_0.json rep=20 outdir=$datadir/2021-07-02-pre_female_0
+./bin/evorole --force param=pre_male_0.json rep=50 outdir=$datadir/2021-07-02-pre_male_0
