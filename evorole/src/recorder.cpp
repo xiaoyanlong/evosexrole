@@ -171,8 +171,10 @@ namespace evorole {
 
   void Recorder::record_mating(int day, const Individual& ind)
   {
-      if (day % param_.event_interval) return;
-      mating_.push_back({ day, ind });
+      if (day > 190000) {
+          if (day % 1) return;
+          mating_.push_back({ day, ind });
+      }
   }
 
   void Recorder::record_offspring(int day, const Individual& ind, const Individual& female, const Individual& male)

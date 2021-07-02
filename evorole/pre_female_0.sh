@@ -6,7 +6,7 @@
 #SBATCH --partition=gelifes
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
-#SBATCH --mem=15GB
+#SBATCH --mem=25GB
 #SBATCH --cpus-per-task=16
 
 module load GCC --latest
