@@ -130,6 +130,16 @@ namespace evorole {
             rec.ind.offbefden << ',' << rec.ind.offspring << '\n';
       }
     }
+    { // mating
+        auto os = std::ofstream(out_ / "mating.csv");
+        os << "day,sex,preference,ornaments,pc1,pc2,mating_day,matingT,matingduration,numOff,numSurOff,\n";
+        for (const auto& rec : mating_) {
+            os << rec.day << ',' << sex_prefix[rec.ind.sex] << ',';
+            os << rec.ind.genome << ',';
+            os << rec.ind.matings_day << ',' << rec.ind.matings << ',' << rec.ind.matingduration << ',' <<
+                rec.ind.offbefden << ',' << rec.ind.offspring << '\n';
+        }
+    }
     { // offspring
       auto os = std::ofstream(out_ / "offspring.csv");
       os << "day,sex,malep1,malet,malepc1,malepc2,femalep1,femalet,femalepc1,femalepc2,offp1,offt,offpc1,offpc2,offjuvdays\n";
@@ -159,6 +169,11 @@ namespace evorole {
     deaths_.push_back({ day, src, ind });
   }
 
+  void Recorder::record_mating(int day, const Individual& ind)
+  {
+      if (day % param_.event_interval) return;
+      mating_.push_back({ day, ind });
+  }
 
   void Recorder::record_offspring(int day, const Individual& ind, const Individual& female, const Individual& male)
   {

@@ -22,6 +22,7 @@ namespace evorole {
     int offbefden;      //counter offspring before density-dependent selection
     int offspring;      // counter mature offspring
     int matingduration; // counter mating duration
+    int matings_day;    // counter matings per day
     Sex sex;
   };
 

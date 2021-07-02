@@ -44,13 +44,14 @@ namespace evorole {
 
 
   Individual::Individual(const Parameter& param, Sex sex) :
-    pool_stay(0),
-    genome(param.genome),
-    matings(0),
-    matingduration(0),
-    offbefden(0),
-    offspring(0),
-    sex(sex)
+      pool_stay(0),
+      genome(param.genome),
+      matings(0),
+      matingduration(0),
+      offbefden(0),
+      offspring(0),
+      matings_day(0),
+      sex(sex)
   {}
 
 
@@ -116,14 +117,20 @@ namespace evorole {
     auto& m = pop_[Sex::male][Pool::mate];
     if (f.size()-last > 0)              // unmated females or males have to wait for another day
     {
-        for (size_t i = last; i < f.size(); ++i)
+        for (size_t i = last; i < f.size(); ++i) {
             ++f[i].matingduration;
+            recorder_->record_mating(day, f[i]);
+        }
+
     }
     if (m.size()-last > 0)
     {
-        for (size_t i = last; i < m.size(); ++i)
+        for (size_t i = last; i < m.size(); ++i) {
             ++m[i].matingduration;
+            recorder_->record_mating(day, m[i]);
+        }
     }
+
     const double fmu = param_.female.mu[Pool::care];
     const double mmu = param_.male.mu[Pool::care];
     const double beta = param_.male.beta[Pool::care];
@@ -133,6 +140,12 @@ namespace evorole {
     for (size_t i = 0; i < last; ++i) {
       ++f[i].matings;
       ++m[i].matings;
+      ++f[i].matings_day;
+      ++m[i].matings_day;
+      recorder_->record_mating(day, f[i]);
+      recorder_->record_mating(day, m[i]);
+      --f[i].matings_day;
+      --m[i].matings_day;
       // draw effective care days
       const double pc1 = f[i].pool_stay = draw_pool_days(f[i].genome.pc1, fmu); 
       const double pc2 = m[i].pool_stay = draw_pool_days(m[i].genome.pc2, mmu + beta * m[i].genome.tau * m[i].genome.tau);
@@ -170,6 +183,7 @@ namespace evorole {
         ? pop_[Sex::male][Pool::care].push_back(m[i])
         : recorder_->record_death(day, Pool::care, m[i]);   // exact: day <- day + pc2
     }
+
     f.erase(f.begin(), f.begin() + last);
     m.erase(m.begin(), m.begin() + last);
   }
