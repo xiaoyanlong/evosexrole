@@ -115,21 +115,21 @@ namespace evorole {
     // mating pairs in [0, last)
     auto& f = pop_[Sex::female][Pool::mate];
     auto& m = pop_[Sex::male][Pool::mate];
-    if (f.size()-last > 0)              // unmated females or males have to wait for another day
-    {
-        for (size_t i = last; i < f.size(); ++i) {
-            ++f[i].matingduration;
-            recorder_->record_mating(day, f[i]);
-        }
+    //if (f.size()-last > 0)              // unmated females or males have to wait for another day
+    //{
+    //    for (size_t i = last; i < f.size(); ++i) {
+    //        ++f[i].matingduration;
+    //        recorder_->record_mating(day, f[i]);
+    //    }
 
-    }
-    if (m.size()-last > 0)
-    {
-        for (size_t i = last; i < m.size(); ++i) {
-            ++m[i].matingduration;
-            recorder_->record_mating(day, m[i]);
-        }
-    }
+    //}
+    //if (m.size()-last > 0)
+    //{
+    //    for (size_t i = last; i < m.size(); ++i) {
+    //        ++m[i].matingduration;
+    //        recorder_->record_mating(day, m[i]);
+    //    }
+    //}
 
     const double fmu = param_.female.mu[Pool::care];
     const double mmu = param_.male.mu[Pool::care];
@@ -142,8 +142,8 @@ namespace evorole {
       ++m[i].matings;
       ++f[i].matings_day;
       ++m[i].matings_day;
-      recorder_->record_mating(day, f[i]);
-      recorder_->record_mating(day, m[i]);
+     /* recorder_->record_mating(day, f[i]);
+      recorder_->record_mating(day, m[i]);*/
       --f[i].matings_day;
       --m[i].matings_day;
       // draw effective care days

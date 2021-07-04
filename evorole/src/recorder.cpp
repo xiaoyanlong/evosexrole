@@ -120,26 +120,26 @@ namespace evorole {
         os << ',' << s << '\n';
       }
     }
-    { // deaths
-      auto os = std::ofstream(out_ / "deaths.csv");
-      os << "day,individual,preference,ornaments,pc1,pc2,matingT,matingduration,numOff,numSurOff,\n";
-      for (const auto& rec : deaths_) {
-        os << rec.day << ',' << sex_prefix[rec.ind.sex] << '_' << PoolName[rec.src] << ',';
-        os << rec.ind.genome << ',';
-        os << rec.ind.matings << ',' << rec.ind.matingduration<< ','<<
-            rec.ind.offbefden << ',' << rec.ind.offspring << '\n';
-      }
-    }
-    { // mating
-        auto os = std::ofstream(out_ / "mating.csv");
-        os << "day,sex,preference,ornaments,pc1,pc2,mating_day,matingT,matingduration,numOff,numSurOff,\n";
-        for (const auto& rec : mating_) {
-            os << rec.day << ',' << sex_prefix[rec.ind.sex] << ',';
-            os << rec.ind.genome << ',';
-            os << rec.ind.matings_day << ',' << rec.ind.matings << ',' << rec.ind.matingduration << ',' <<
-                rec.ind.offbefden << ',' << rec.ind.offspring << '\n';
-        }
-    }
+    //{ // deaths
+    //  auto os = std::ofstream(out_ / "deaths.csv");
+    //  os << "day,individual,preference,ornaments,pc1,pc2,matingT,matingduration,numOff,numSurOff,\n";
+    //  for (const auto& rec : deaths_) {
+    //    os << rec.day << ',' << sex_prefix[rec.ind.sex] << '_' << PoolName[rec.src] << ',';
+    //    os << rec.ind.genome << ',';
+    //    os << rec.ind.matings << ',' << rec.ind.matingduration<< ','<<
+    //        rec.ind.offbefden << ',' << rec.ind.offspring << '\n';
+    //  }
+    //}
+    //{ // mating
+    //    auto os = std::ofstream(out_ / "mating.csv");
+    //    os << "day,sex,preference,ornaments,pc1,pc2,mating_day,matingT,matingduration,numOff,numSurOff,\n";
+    //    for (const auto& rec : mating_) {
+    //        os << rec.day << ',' << sex_prefix[rec.ind.sex] << ',';
+    //        os << rec.ind.genome << ',';
+    //        os << rec.ind.matings_day << ',' << rec.ind.matings << ',' << rec.ind.matingduration << ',' <<
+    //            rec.ind.offbefden << ',' << rec.ind.offspring << '\n';
+    //    }
+    //}
     { // offspring
       auto os = std::ofstream(out_ / "offspring.csv");
       os << "day,sex,malep1,malet,malepc1,malepc2,femalep1,femalet,femalepc1,femalepc2,offp1,offt,offpc1,offpc2,offjuvdays\n";
