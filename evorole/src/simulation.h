@@ -51,7 +51,7 @@ namespace evorole {
     size_t randomized_mating_pairs();
     size_t collect_random_mating_pairs();
     size_t collect_fem_sel_mating_pairs();
-    Individual create_offspring(Sex sex, int juv_stay, const Individual& famale, const Individual& male);
+    Individual create_offspring(int day, Sex sex, int juv_stay, const Individual& famale, const Individual& male);
     int draw_pool_days(int max_days, double mu);
 
   private:

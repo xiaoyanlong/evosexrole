@@ -165,7 +165,7 @@ namespace evorole {
         if (juvT == draw_pool_days(juvT, jmu)) {
           // will survive juvenile state too.
           const int pc = std::max(f[i].pool_stay, m[i].pool_stay);    // (max) parent care days
-          auto offspring = create_offspring(osex, pc + juvT, f[i], m[i]);
+          auto offspring = create_offspring(day, osex, pc + juvT, f[i], m[i]);
           pop_[osex][Pool::juv].push_back(offspring);              // hello world
           recorder_->record_offspring(day, offspring, f[i], m[i]);
           ++f[i].offspring;
@@ -240,7 +240,7 @@ namespace evorole {
   }
 
 
-  Individual Simulation::create_offspring(Sex sex, int juv_stay, const Individual& female, const Individual& male)
+  Individual Simulation::create_offspring(int day, Sex sex, int juv_stay, const Individual& female, const Individual& male)
   {
     const auto& mut_par = param_.mutation;
     auto binary = rndutils::binary_distribution{};
@@ -255,7 +255,8 @@ namespace evorole {
     // mutation
     og.P = add_p_tau_cauchy_mutation_if(og.P, mut_par.m_P, mut_par.sigma_P, mut_par.smax_P, reng_);
     og.tau = add_p_tau_cauchy_mutation_if(og.tau, mut_par.m_tau, mut_par.sigma_tau, mut_par.smax_tau, reng_);
-    auto day_mut = std::bernoulli_distribution(mut_par.m_pc);
+    auto mutation_pc = (day > 50000) ? mut_par.m_pc : 0.0;
+    auto day_mut = std::bernoulli_distribution(mutation_pc);
     if (day_mut(reng_)) og.pc1 = std::max(0, og.pc1 + (2 * binary(reng_) - 1));
     if (day_mut(reng_)) og.pc2 = std::max(0, og.pc2 + (2 * binary(reng_) - 1));
     return offspring;

@@ -2,14 +2,14 @@
 
 #!!! adjust the time quota !!!
 
-#SBATCH --time=10:00:00
+#SBATCH --time=22:00:00
 #SBATCH --partition=gelifes
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
 #SBATCH --mem=10GB
-#SBATCH --cpus-per-task=16
+#SBATCH --cpus-per-task=24
 
 module load GCC --latest
 
 datadir="/data/$(whoami)"
-./bin/evorole --force param=2021-07-05-pre_0.002_female1_2e7.json rep=10 outdir=$datadir/2021-07-05-pre_0.002_female1_2e7
+./bin/evorole --force param=2021-07-05-pre_0.001_male4_1e8.json rep=5 outdir=$datadir/2021-07-05-pre_0.001_male4_1e8
